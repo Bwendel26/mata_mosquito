@@ -1,0 +1,47 @@
+body{
+   box-sizing: border-box;
+
+   background-image: url(../imgs/bg.jpg);
+   background-repeat: no-repeat;
+
+   //painel do game
+   .painel {
+      position: absolute;
+      width: 190px;
+      padding: 10px;
+      bottom: 0px;
+      left: 0px;
+      border-top: solid 1px #fff;
+      background-color: #fff;
+      opacity: 0.7; //div 30% transparente
+
+      .vidas{
+         float: left;
+      }
+      .cronometro{
+         float: left;
+         font-size: 20px;
+         font-weight: bold;
+      }
+   }
+
+   //Mosquito
+   .mosquito1 {
+      width: 60px;
+      height: 60px;
+   }
+   .mosquito2 {
+      width: 80px;
+      height: 80px;
+   }
+   .mosquito3 {
+      width: 100px;
+      height: 100px;
+   }
+   .ladoA {
+      transform: scaleX(1); //posicao comum
+   }
+   .ladoB {
+      transform: scaleX(-1); //posicao invertida
+   }
+}
