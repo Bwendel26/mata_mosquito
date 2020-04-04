@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+   <head>
+      <title>Mata mosquito</title>
+      <meta charset="UTF-8">
+      <script src="game.js"></script>
+      <link rel="stylesheet" href="style/style.css" type="text/css">
+   </head>
+   <body onresize="verificaTamTela()">
+      <div class="painel">
+         <div class="vidas">
+            <img id="v1" src="imgs/coracao_cheio.png" alt="coracao_cheio">
+            <img id="v2" src="imgs/coracao_cheio.png" alt="coracao_cheio">
+            <img id="v3" src="imgs/coracao_cheio.png" alt="coracao_cheio">
+         </div>
+         <div class="cronometro">Tempo restante: <span id="tempo"></span></div>
+      </div>
+
+      <script>
+         //inserindo o tempo inicial no documento
+         //inserindo após a renderização dos elementos html
+         document.getElementById('tempo').innerHTML = tempo;
+
+         //executando a chamada de posRandom em 1200 milisecs
+         var criaMosquito = setInterval(function() {
+            posRandom();
+         }, criaMosquitoTempo)
+      </script>
+   </body>
+</html>

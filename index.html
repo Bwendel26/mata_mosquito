@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt_br">
    <head>
-      <title>Mata mosquito</title>
       <meta charset="UTF-8">
-      <script src="game.js"></script>
-      <link rel="stylesheet" href="style/style.css" type="text/css">
+      <title>Mata mosquito - Game over!</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="style/style.css">
    </head>
-   <body onresize="verificaTamTela()">
-      <div class="painel">
-         <div class="vidas">
-            <img id="v1" src="imgs/coracao_cheio.png" alt="coracao_cheio">
-            <img id="v2" src="imgs/coracao_cheio.png" alt="coracao_cheio">
-            <img id="v3" src="imgs/coracao_cheio.png" alt="coracao_cheio">
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col">
+               <div class="d-flex justify-content-center">
+                  <img src="imgs/game.png" alt="game">
+               </div>
+            </div>
          </div>
-         <div class="cronometro">Tempo restante: <span id="tempo"></span></div>
+
+         <div class="row">
+            <div class="col">
+               <div class="d-flex justify-content-center">
+                  <div class="mb-2">
+                     <select id="nivel" class="form-control">
+                        <option value="">-- Selecione o nivel --</option>
+                        <option value="normal">Normal</option>
+                        <option value="dificil">Difícil</option>
+                        <option value="chucknorris">Chuck Norris</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+      
+         <div class="row">
+            <div class="col">
+               <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-danger btn-lg" onclick = "iniciarJogo()">Iniciar Jogo</button>
+               </div>
+            </div>
+         </div>
       </div>
 
-      <script>
-         //inserindo o tempo inicial no documento
-         //inserindo após a renderização dos elementos html
-         document.getElementById('tempo').innerHTML = tempo;
+   <script>
+      function iniciarJogo() {
+         var nivel = document.getElementById('nivel').value;
 
-         //executando a chamada de posRandom em 1200 milisecs
-         var criaMosquito = setInterval(function() {
-            posRandom();
-         }, 1000)
-      </script>
+         if(nivel === "") {
+            alert('Selecione um nível de dificuldade!');
+            return false;
+         } else {
+            window.location.href = `app.html?${nivel}`;
+         }
+      }
+   </script>
    </body>
 </html>

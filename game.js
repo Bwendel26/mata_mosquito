@@ -1,7 +1,25 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1;
-var tempo = 10;
+var tempo = 20;
+var criaMosquitoTempo = 1500;
+
+//Logica de nivel do game:
+//retorna apenas os parametros a direita da interrogação no link
+var nivel = window.location.search;
+nivel.replace('?', ''); //retirando a interrogação do parametro
+
+if(nivel === 'normal') {
+//1500milisecs
+   criaMosquitoTempo = 1500;
+} else if(nivel === 'dificil') {
+//1000milisecs
+   criaMosquitoTempo = 1000;
+}else if(nivel === 'chucknorris'){
+//750milisecs
+   criaMosquitoTempo = 750;
+}
+////////
 
 function verificaTamTela() {
    //pegando as proporcoes do navegador
